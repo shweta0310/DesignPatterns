@@ -1,0 +1,35 @@
+﻿Problem Statement: File System Explorer
+Design a file system explorer that allows users to navigate and manipulate a hierarchical structure of files and directories. 
+Your implementation should:
+
+Model both files and directories as components in the file system
+Allow directories to contain files and other directories (creating a tree-like structure)
+Support operations like:
+
+Calculating the total size of any component (files have individual sizes, directories' sizes are the sum of their contents)
+Displaying the structure with proper indentation to reflect hierarchy
+Moving components between directories
+Adding and removing components at any level
+Searching for components by name across the entire structure
+
+Implement specific operations for different types of components:
+
+Files: Open, Edit, Save
+Directories: Create, Delete, List Contents
+Special handling for different file types (TextFile, ImageFile, ExecutableFile)
+
+Support traversal operations to apply actions across the entire hierarchy:
+
+Count all components
+Find all components matching certain criteria (e.g., files larger than 1MB) --
+Apply permissions or other attributes recursively --
+
+--------------------------------------------------------------------------------
+
+This problem is commonly asked in machine coding rounds because it:
+
+Tests your understanding of hierarchical structure modeling
+Requires uniform treatment of both individual objects and compositions of objects
+Demonstrates your ability to implement recursive operations
+Shows how you handle polymorphism and inheritance
+Provides a real-world example that most interviewers can easily understand

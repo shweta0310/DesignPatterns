@@ -1,0 +1,83 @@
+State Design Pattern Practice Problem
+Here's a practical design problem to help you practice the State design pattern in C#:
+Problem Statement: Vending Machine Simulator
+Design a vending machine simulator that manages different states and transitions:
+
+The vending machine has the following states:
+Idle (ready to receive money)
+HasMoney (money inserted but no product selected)
+ProductSelected (product selected but not yet dispensed)
+Dispensing (dispensing product)
+OutOfStock (product is out of stock)
+ServiceMode (maintenance mode)
+
+The machine should support these operations:
+Insert money (coins/bills)
+Select a product
+Cancel transaction
+Dispense product
+Return change
+Restock products
+Enter/exit service mode
+
+Each state allows only certain operations and may trigger transitions to other states:
+In Idle state: Can only insert money
+In HasMoney state: Can select product or cancel transaction
+In ProductSelected state: Can dispense product or cancel transaction
+In Dispensing state: Automatically transitions to Idle after dispensing
+In OutOfStock state: Can only cancel transaction or restock
+In ServiceMode state: Can restock or exit service mode
+
+The system should track:
+Available products with prices and inventory levels
+Current amount of money inserted
+Transactions and sales
+
+This problem is excellent for practicing the State pattern because:
+
+It has clearly defined states with different behaviors
+The behavior of operations depends on the current state
+There are clear transitions between states
+It's a real-world example that interviewers can easily understand
+
+----------------
+
+1. Available products with prices and inventory levels
+
+The vending machine should maintain a catalog of products it can sell
+Each product needs to have:
+
+A price (how much it costs)
+An inventory level (how many units are currently available)
+Typically also an ID or name to identify it
+
+This information is essential for determining whether a product can be dispensed and how much to charge
+
+2. Current amount of money inserted
+
+The system needs to keep track of how much money a customer has inserted during the current transaction
+This amount increases as more coins/bills are added
+The system will use this to determine:
+
+If enough money has been inserted to purchase the selected product
+How much change to return if excess money was inserted
+This amount resets to zero after a transaction is completed or canceled
+
+3. Transactions and sales
+
+The system should record completed sales for reporting and auditing
+This could include information like:
+
+Which products were sold
+When they were sold
+How much money was collected
+
+This data would be useful for:
+
+Tracking popular products
+Calculating total revenue
+Determining when to restock
+Analyzing sales patterns
+
+These tracking requirements represent the data model that needs to be maintained alongside the state transitions. While the State pattern focuses on behavior that changes based on state, this data represents the context that the states operate within and modify.
+In your implementation, this would typically mean having properties in your main VendingMachine class to store this information, which the different state classes can access and modify as appropriate during state transitions and operations.

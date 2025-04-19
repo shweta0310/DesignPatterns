@@ -1,0 +1,30 @@
+﻿Problem Statement: Library Catalog System
+Design a library catalog system with the following requirements:
+
+The library contains different collections of items: Books, Magazines, DVDs, and AudioBooks.
+Each collection has different properties:
+
+Books: Title, Author, ISBN, PublicationYear, Genre
+Magazines: Title, Issue, PublicationDate, Publisher
+DVDs: Title, Director, ReleaseYear, Duration
+AudioBooks: Title, Author, Narrator, Duration
+
+
+The library needs a unified way to iterate through all these collections without exposing the underlying implementation details.
+The system should support different traversal methods:
+
+For Books: Iterate by title (alphabetical), by author, or by publication year
+For Magazines: Iterate by publication date, by title, or by publisher
+For all media: Iterate by title alphabetically
+
+
+Implement a feature that allows a librarian to check what items are available in each category, regardless of their internal storage mechanism.
+
+-----------------------
+
+This is a common type of problem in machine coding rounds because it tests:
+
+Your understanding of design patterns
+Your ability to create flexible, extensible code
+How you handle different types of objects with a unified interface
+Your practical implementation skills in C#
