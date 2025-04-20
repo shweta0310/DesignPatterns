@@ -1,0 +1,43 @@
+## Adapter Design Pattern Practice Problem Statement
+
+**Problem Statement: Integrate a Legacy Logging System into a Modern Application**
+
+You are developing a C# application that uses a standard logging interface:
+
+```csharp
+public interface ILogger
+{
+    void LogInfo(string message);
+    void LogError(string message);
+}
+```
+
+However, your organization has an existing legacy logging library with the following class:
+
+```csharp
+public class LegacyLogger
+{
+    public void WriteLog(string severity, string msg)
+    {
+        // Writes log to a file in a custom format
+    }
+}
+```
+
+You are required to use the legacy logger in your new application, but its interface does not match the `ILogger` interface expected by your codebase.
+
+### Requirements
+
+- Implement the Adapter design pattern so that the legacy logging system can be used wherever `ILogger` is required.
+- The adapter should translate the `LogInfo` and `LogError` calls to the appropriate `WriteLog` calls, using `"INFO"` and `"ERROR"` as severity levels.
+- The rest of the application should not be aware that a legacy logger is being used.
+- Demonstrate the usage of your adapter by injecting it into a class that depends on `ILogger`.
+
+### Bonus
+
+- Add support for future log levels (e.g., `LogWarning`), showing how your adapter can be extended.
+- Show how you would unit test the adapter.
+
+---
+
+This scenario is commonly encountered in interviews and real-world projects, especially when integrating third-party or legacy systems that have incompatible interfaces. It tests your ability to decouple systems and apply the Adapter pattern to enable seamless integration without modifying existing code

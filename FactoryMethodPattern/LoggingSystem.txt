@@ -1,0 +1,33 @@
+You're absolutely right, and I apologize for the confusion. Let me provide a more focused problem statement specifically for the Factory Method pattern:
+
+# Factory Method Design Pattern Practice Problem
+
+Here's a clearer problem that focuses on the Factory Method pattern in C#:
+
+## Problem Statement: Logging System
+
+Design a logging system for an application that can create different types of loggers based on configuration or runtime requirements:
+
+1. The system should support various logger types:
+   - Console Logger (outputs to console)
+   - File Logger (writes to log files)
+   - Database Logger (stores logs in a database)
+   - Network Logger (sends logs to a remote server)
+   - Email Logger (sends critical logs via email)
+
+2. Each logger type has:
+   - A specific way to write log entries
+   - Different initialization requirements
+   - Different configuration options (file paths, connection strings, etc.)
+   - Different formatting capabilities
+
+3. The logging system should:
+   - Allow client code to create appropriate loggers without knowing concrete classes
+   - Let each derived class decide which concrete logger to instantiate
+   - Support hierarchical logging (passing logs up to parent loggers)
+   - Handle multiple logging levels (Debug, Info, Warning, Error, Critical)
+
+4. The design should enable:
+   - Easy addition of new logger types
+   - Runtime selection of logger based on configuration
+   - Standardized logging interface for all client code

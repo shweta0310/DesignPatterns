@@ -1,0 +1,22 @@
+## Template Method Design Pattern Practice Problem Statement
+
+**Problem Statement: Implement a Data Import Framework for Multiple File Formats**
+
+You are tasked with designing a data import framework in C#. The application needs to support importing data from various file formats such as CSV, XML, and JSON. While the high-level steps for importing data are similar, each format requires specific logic for reading and parsing the file.
+
+### Requirements
+
+- Define the overall algorithm for importing data in a base class, ensuring the steps occur in the correct order (e.g., open file, read data, parse data, validate data, save data).
+- Allow subclasses to override specific steps that differ for each file format (e.g., reading and parsing logic).
+- The base class should prevent the overall algorithm structure from being changed by subclasses.
+- Implement at least two concrete importers (e.g., `CsvDataImporter`, `JsonDataImporter`) that inherit from the base class and provide format-specific logic.
+- Demonstrate usage by importing data from at least two different file formats using your framework.
+
+### Bonus
+
+- Add hooks for optional steps (e.g., logging or pre-processing) that subclasses may override if needed.
+- Make the framework extensible for future file formats with minimal changes to existing code.
+
+---
+
+This problem is commonly asked in interviews because it tests your ability to design extensible frameworks, separate common logic from format-specific details, and apply the Template Method pattern for code reuse and maintainability

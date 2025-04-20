@@ -1,0 +1,49 @@
+# Decorator Design Pattern Practice Problem
+
+Here's a practical design problem to help you practice the Decorator design pattern in C#:
+
+## Problem Statement: Coffee Ordering System
+
+Design a coffee ordering system for a café where customers can customize their coffee with various add-ons:
+
+1. The system should support basic coffee types:
+   - Espresso
+   - Americano
+   - Cappuccino
+   - Latte
+   - Cold Brew
+
+2. Customers can customize their coffee with multiple add-ons:
+   - Extra shot of espresso (+$0.75)
+   - Vanilla syrup (+$0.50)
+   - Caramel syrup (+$0.50)
+   - Hazelnut syrup (+$0.50)
+   - Whipped cream (+$0.50)
+   - Almond milk / Oat milk / Soy milk (substitute for regular milk, +$1.00)
+   - Cinnamon sprinkle (+$0.25)
+   - Chocolate powder (+$0.25)
+
+3. The system should:
+   - Calculate the total price based on the base coffee plus all add-ons
+   - Generate a description that lists the coffee and all customizations
+   - Track the ingredients needed for inventory management
+   - Calculate nutritional information that changes with each add-on
+   - Support seasonal promotions and discount rules
+
+4. Additional requirements:
+   - Add-ons can be combined in any order and quantity
+   - Some add-ons might be incompatible with certain coffee types
+   - Special cases like "double shot" or "extra hot" should be supported
+   - The system should be easily extendable for new coffee types and add-ons
+
+This problem is ideal for the Decorator pattern because:
+- It has a core component (coffee) that can be extended with additional features (add-ons)
+- Add-ons can be applied in any combination and order
+- Each add-on adds incremental functionality (price, description, ingredients)
+- The system needs to be open for extension (new coffee types, new add-ons)
+
+This is a popular interview question because:
+- It's a real-world scenario that's easy to understand
+- It tests your ability to apply object-oriented principles
+- It shows how you handle extensibility requirements
+- It demonstrates your understanding of dynamic composition vs. inheritance

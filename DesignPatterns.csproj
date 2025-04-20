@@ -7,4 +7,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="BridgePattern\" />
+    <Folder Include="BuilderPattern\" />
+    <Folder Include="ChainOfResponsibilityPattern\" />
+    <Folder Include="FlyweightPattern\" />
+    <Folder Include="InterpretorPattern\" />
+    <Folder Include="MediatorPattern\" />
+    <Folder Include="MementoPattern\" />
+    <Folder Include="VisitorPattern\" />
+    <Folder Include="PrototypePattern\" />
+    <Folder Include="ProxyPattern\" />
+  </ItemGroup>
+
 </Project>

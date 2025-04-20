@@ -1,0 +1,51 @@
+## Proxy Design Pattern Practice Problem Statement
+
+**Problem Statement: Secure Document Access System with Caching**
+
+Design a document access system in C# where sensitive documents are loaded only when necessary and accessed securely. The system should:
+
+- Load document content from a database **only when explicitly requested** (lazy loading)
+- Restrict access based on user roles (e.g., Admin vs. Guest)
+- Cache frequently accessed documents to improve performance
+- Log all access attempts for auditing
+
+### Requirements:
+1. Create an `IDocument` interface with methods:
+   - `string LoadContent()`
+   - `string GetMetadata()`
+2. Implement `SecureDocumentProxy` that:
+   - Checks user permissions before granting access
+   - Loads document content from `RealDocument` only when needed
+   - Caches loaded content for subsequent requests
+   - Logs access attempts (success/failure)
+3. Ensure the client interacts only with the proxy, not the real document object directly
+
+### Example Scenario:
+```csharp
+// Client code
+var adminProxy = new SecureDocumentProxy("admin", "TOP_SECRET.docx");
+Console.WriteLine(adminProxy.LoadContent()); // Successfully loads
+
+var guestProxy = new SecureDocumentProxy("guest", "TOP_SECRET.docx");
+Console.WriteLine(guestProxy.LoadContent()); // Access denied
+```
+
+### Bonus:
+- Add document versioning support in the proxy
+- Implement cache expiration after 5 minutes
+- Create different proxy types (e.g., `LoggingProxy`, `ValidationProxy`) using decorator pattern
+
+---
+
+### Why This Problem?
+This scenario tests key proxy pattern concepts frequently asked in interviews:
+1. Controlled access to expensive resources[1][6]
+2. Lazy initialization of heavy objects[2][4]
+3. Permission validation and caching implementation[1][7]
+4. Interface consistency between proxy and real subject[1][5]
+
+The solution demonstrates understanding of:
+- Security layer implementation
+- Performance optimization through caching
+- Separation of concerns between access control and core functionality
+- Proxy pattern vs. decorator pattern distinctions

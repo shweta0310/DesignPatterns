@@ -1,0 +1,19 @@
+Problem Statement: Configuration Manager
+
+**Objective:** Design a thread-safe `ConfigurationManager` class that ensures only one instance exists throughout the application's lifecycle. This class should manage application-wide configuration settings loaded from a file
+
+**Requirements:**
+
+1. **Singleton Implementation:**
+   -Ensure that only one instance of `ConfigurationManager` can be created
+   -Provide a global point of access to this instance
+   -Ensure thread safety during instance creation and access
+
+2. **Configuration Loading:**
+   -Load configuration settings from a file (e.g., JSON or XML) during the first access
+   -Provide methods to retrieve configuration values by keys
+   -Optionally, allow refreshing the configuration at runtime
+
+3. **Usage Scenario:**
+   -Multiple parts of the application should access configuration settings via the `ConfigurationManager`
+   -Demonstrate that all accesses refer to the same instance

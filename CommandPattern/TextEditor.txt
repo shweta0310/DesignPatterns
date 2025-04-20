@@ -1,0 +1,49 @@
+﻿## Command Design Pattern Practice Problem Statement
+
+**Problem Statement: Implement a Text Editor Command System**
+
+Design a command-based system for a simple text editor in C#. The editor should support the following user actions:
+
+- Insert text at a given position
+- Delete text from a given position
+- Replace text in a given range with new text
+- Undo and redo the last operation
+
+**Requirements:**
+
+- Each user action (insert, delete, replace) must be implemented as a separate command class following the Command design pattern.
+- The text editor should maintain a history of commands to support undo and redo operations.
+- The system should be easily extensible to add new commands in the future (e.g., copy, paste).
+- The Invoker should not know the details of how each command is executed; it should only execute, undo, or redo commands.
+- The Receiver is the text buffer or document object that actually performs the operations.
+
+**Bonus:**
+- Support for batch/compound commands (e.g., macro recording and playback).
+- Logging of all executed commands for audit purposes.
+
+---
+
+### Example Scenario
+
+Suppose a user performs the following steps:
+
+1. Inserts "Hello" at position 0.
+2. Inserts " World" at position 5.
+3. Deletes " World" starting at position 5.
+4. Undoes the last delete operation.
+5. Redoes the last delete operation.
+
+Your system should correctly update the document and maintain the ability to undo/redo as per the command history.
+
+---
+
+### Why This Problem?
+
+This problem is commonly asked in interviews for low-level design or machine coding rounds because it tests your ability to:
+
+- Encapsulate actions as objects (commands)
+- Decouple invoker, command, and receiver logic
+- Implement undo/redo logic with command history
+- Design extensible and maintainable code[3][4][7][8]
+
+---

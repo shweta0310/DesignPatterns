@@ -1,0 +1,45 @@
+# Observer Design Pattern Practice Problem
+
+Here's a practical design problem to help you practice the Observer design pattern in C#:
+
+## Problem Statement: Stock Market Monitoring System
+
+Design a stock market monitoring system where multiple users can track real-time updates for different stocks:
+
+1. The system should include:
+   - A central stock exchange that maintains current prices for multiple stocks
+   - Multiple types of observers that need notifications when stock prices change:
+     - Premium Clients (need immediate updates on any change)
+     - Regular Clients (updates only on significant price changes > 5%)
+     - Mobile App Users (need condensed updates suitable for mobile display)
+     - Dashboard Displays (need graphical data updates)
+     - Automated Trading Systems (need raw data for algorithmic decisions)
+
+2. Each stock should:
+   - Maintain its current price, previous closing price, and daily high/low values
+   - Notify appropriate observers when its price changes
+   - Support observers subscribing to individual stocks or categories of stocks
+
+3. The system should support:
+   - Adding and removing observers at runtime
+   - Observers subscribing to multiple stocks
+   - Different notification formats based on observer type
+   - Throttling notifications for certain observer types
+   - Batch updates vs. immediate updates based on observer preference
+
+4. Implement behavior for special scenarios:
+   - Market opening and closing notifications
+   - Circuit breaker events (when stocks change too rapidly)
+   - Handling a large number of observers efficiently
+
+This problem is excellent for the Observer pattern because:
+- It has a clear publisher-subscriber relationship
+- Different subscribers need different types of notifications
+- The state changes (stock prices) occur independently of the observers
+- Observers need to be added and removed dynamically
+
+This is commonly asked in interviews because it:
+- Tests understanding of publisher-subscriber relationships
+- Examines how you handle real-time event notifications
+- Shows how you manage different subscriber needs
+- Demonstrates your approach to a system with many dynamic components

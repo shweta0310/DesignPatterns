@@ -1,0 +1,46 @@
+# Strategy Design Pattern Practice Problem
+
+Here's a practical design problem to help you practice the Strategy design pattern in C#:
+
+## Problem Statement: Payment Processing System
+
+Design a payment processing system for an e-commerce application that supports multiple payment methods with different processing algorithms:
+
+1. The system should support various payment methods:
+   - Credit Card
+   - PayPal
+   - Cryptocurrency (Bitcoin)
+   - Bank Transfer
+   - Mobile Payment (Apple Pay, Google Pay)
+   - Gift Cards
+
+2. Each payment method has its own:
+   - Validation logic (different information required)
+   - Processing algorithm (different APIs and steps)
+   - Fee calculation (different rates and structures)
+   - Refund handling
+
+3. The payment system should:
+   - Allow new payment methods to be added without modifying existing code
+   - Let users switch between payment methods at runtime
+   - Handle transaction logging consistently across all payment methods
+   - Support payment method-specific features (e.g., partial payments for gift cards)
+
+4. For each transaction, the system should:
+   - Validate payment information
+   - Process the payment
+   - Calculate fees
+   - Generate a receipt with appropriate details
+   - Support refunds when necessary
+
+This problem is excellent for the Strategy pattern because:
+- It involves multiple algorithms (payment processing methods) that share a common purpose
+- New strategies (payment methods) are likely to be added over time
+- The strategy selection can change at runtime (user selecting payment method)
+- Each algorithm has its own implementation details but a common interface
+
+This is a common interview problem because it:
+- Has real-world relevance
+- Tests object-oriented design principles
+- Shows how you handle extensibility
+- Demonstrates your understanding of both the pattern and practical implementation concerns

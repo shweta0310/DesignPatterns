@@ -1,0 +1,45 @@
+# Abstract Factory Design Pattern Practice Problem
+
+Here's a practical design problem to help you practice the Abstract Factory design pattern in C#:
+
+## Problem Statement: Cross-Platform UI Framework
+
+Design a cross-platform UI framework that can create consistent UI components for different operating systems:
+
+1. The system should support multiple platform families:
+   - Windows
+   - macOS
+   - Web/Browser
+   - Mobile (iOS/Android)
+
+2. For each platform, the system needs to create matching UI component families:
+   - Buttons (PrimaryButton, SecondaryButton)
+   - Text Fields (SingleLine, MultiLine)
+   - Checkboxes and Radio buttons
+   - Dropdown Menus
+   - Dialog Boxes (Alert, Confirmation, Input)
+
+3. The system should:
+   - Ensure all UI components within a platform have consistent look and feel
+   - Hide the platform-specific implementation details from client code
+   - Allow switching between platforms without changing client code
+   - Support adding new component types across all platforms
+   - Support adding new platform families in the future
+
+4. Each platform has specific requirements:
+   - Windows: Uses Windows UI APIs and follows Windows style guidelines
+   - macOS: Uses macOS UI APIs and follows Apple Human Interface Guidelines
+   - Web: Uses HTML/CSS/JS for components following a responsive design
+   - Mobile: Creates native components for Android and iOS
+
+This problem is perfect for the Abstract Factory pattern because:
+- It involves creating families of related objects (UI components)
+- The components must be consistent within each platform family
+- Client code shouldn't be concerned with platform-specific implementations
+- New platforms or components should be easy to add
+
+This is commonly asked in interviews because:
+- It demonstrates your understanding of interface-based design
+- It shows how you handle complex object creation hierarchies
+- It tests your ability to design extensible systems
+- It's a realistic scenario that many developers encounter

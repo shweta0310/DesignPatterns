@@ -1,0 +1,28 @@
+## Facade Design Pattern Practice Problem Statement
+
+**Problem Statement: Simplify a Complex Online Order Processing System**
+
+You are tasked with building a simplified interface for an online order processing system in C#. The current system is composed of several subsystems, each responsible for a different aspect of order processing:
+
+- **Product Inventory**: Checks and reserves product stock.
+- **Payment Gateway**: Processes customer payments.
+- **Invoice Generator**: Creates invoices for completed orders.
+- **Shipping Service**: Arranges shipment of the order.
+
+Currently, clients must interact with each subsystem directly, managing the sequence and error handling themselves. This results in complex, hard-to-maintain code.
+
+### Requirements
+
+- Implement the Facade design pattern to provide a single, unified interface (`OrderFacade`) that allows clients to place an order with a single method call.
+- The `OrderFacade` should internally coordinate all necessary steps: checking inventory, processing payment, generating an invoice, and arranging shipping.
+- If any step fails (e.g., payment fails or stock is unavailable), the facade should handle the error gracefully and ensure the system remains in a consistent state.
+- The client should not interact directly with the subsystem classes; all order processing should go through the facade.
+
+### Bonus
+
+- Allow the facade to expose additional high-level operations (such as order cancellation or order status retrieval) that internally coordinate multiple subsystems.
+- Make the design extensible for future subsystems (e.g., loyalty points, notification services).
+
+---
+
+This scenario is typical in machine coding rounds and low-level design interviews, as it tests your ability to encapsulate complexity, decouple client code from subsystems, and design maintainable, extensible interfaces using the Facade pattern
