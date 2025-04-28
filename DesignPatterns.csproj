@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="BridgePattern\" />
-    <Folder Include="BuilderPattern\" />
     <Folder Include="ChainOfResponsibilityPattern\" />
     <Folder Include="FlyweightPattern\" />
     <Folder Include="InterpretorPattern\" />

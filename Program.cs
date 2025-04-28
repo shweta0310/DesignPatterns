@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DesignPatterns.AbstractFactoryPattern;
 using DesignPatterns.AdapterPattern;
+using DesignPatterns.BuilderPattern;
 using DesignPatterns.CommandPattern;
 using DesignPatterns.CompositePattern;
 using DesignPatterns.DecoratorPattern;
@@ -26,7 +27,8 @@ Console.WriteLine("Select a design pattern to run:\n" +
     "10. Template Method Pattern\n" +
     "11. Iterator Pattern\n" +
     "12. Composite Pattern\n" +
-    "13. State Pattern\n"
+    "13. State Pattern\n" +
+    "14. Builder Pattern\n"
     );
 var choice = Console.ReadLine();
 
@@ -72,6 +74,9 @@ switch (choice)
         break;
     case "13":
         StatePattern.RunPattern();
+        break;
+    case "14":
+        BuilderPattern.RunPattern();
         break;
     default:
         Console.WriteLine("Invalid choice.");

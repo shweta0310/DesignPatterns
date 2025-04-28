@@ -1,0 +1,90 @@
+Here's a design problem for practicing the Builder pattern in C#:
+
+# Design Problem: Restaurant Order Management System
+
+You are tasked with creating a restaurant order management system. The system needs to handle the creation of complex order objects that contain multiple components:
+
+1. Basic order information (order ID, customer name, timestamp)
+2. Food items (multiple items with customizations)
+3. Beverage items (multiple items with customizations)
+4. Packaging options (to-go, dine-in)
+5. Payment information
+6. Delivery details (if applicable)
+
+The challenge is that orders may have different combinations of these components. Some orders might be for dine-in with no delivery details, while others might be to-go orders with specific delivery instructions. Some orders might include beverages, while others might not.
+
+Using the Builder pattern, design a flexible solution that:
+- Allows for creating orders with different combinations of components
+- Maintains a clean, readable API for order creation
+- Supports both a step-by-step construction process and a more direct approach
+- Ensures orders are valid when constructed (e.g., to-go orders must have packaging)
+
+This is a common type of problem in machine coding interviews because it tests:
+1. Your understanding of creational design patterns
+2. How you handle complex object construction
+3. Your ability to design clean, maintainable code
+4. How you implement validation logic
+
+--------------------
+
+Let me provide more specific details about the complex order structure:
+
+# Restaurant Order - Detailed Components
+
+## 1. Basic Order Information
+- **Order ID**: Unique identifier for the order (auto-generated)
+- **Customer Name**: Name of the person placing the order
+- **Contact Number**: Phone number
+- **Timestamp**: When the order was placed
+- **Status**: Current state (e.g., Received, In-Progress, Ready, Delivered, Cancelled)
+
+## 2. Food Items (can have multiple)
+Each food item should include:
+- **Item Name**: Name of the dish
+- **Quantity**: Number of items ordered
+- **Base Price**: Standard price before customizations
+- **Customizations List**: List of modifications to the standard item
+  - Examples: "No onions", "Extra cheese", "Medium spicy"
+- **Special Instructions**: Additional preparation notes
+- **Category**: Appetizer, Main Course, Dessert, etc.
+
+## 3. Beverage Items (can have multiple)
+Each beverage should include:
+- **Beverage Name**: Name of the drink
+- **Quantity**: Number ordered
+- **Size**: Small, Medium, Large, etc.
+- **Temperature**: Hot/Cold/Room temperature
+- **Customizations List**: 
+  - Examples: "Extra shot", "No ice", "Light sugar"
+- **Container Type**: Glass, Paper cup, etc.
+
+## 4. Packaging Options
+- **Packaging Type**: Dine-in, Takeout, or Delivery
+- **Special Packaging Requirements**: Eco-friendly, Separate containers for sauces, etc.
+- **Utensils Required**: Yes/No
+- **Napkins Count**: Number of napkins
+
+## 5. Payment Information
+- **Payment Method**: Cash, Credit Card, Online payment, etc.
+- **Total Amount**: Sum of all items plus taxes and fees
+- **Tax Amount**: Calculated tax
+- **Tip Amount**: Optional tip
+- **Discount Applied**: Any promotions or coupons
+- **Payment Status**: Paid/Unpaid/Partially Paid
+
+## 6. Delivery Details (if applicable)
+- **Delivery Address**: Complete address
+- **Delivery Instructions**: Special notes for the delivery person
+- **Requested Delivery Time**: When the customer wants the order
+- **Estimated Delivery Time**: System-calculated delivery time
+- **Delivery Person**: Assigned delivery staff (if known)
+- **Tracking ID**: For tracking the delivery status
+
+## Additional Complexities to Consider:
+- Some orders might have combo meals that combine multiple food and beverage items with a special price
+- Orders might have different tax rates based on item type or location
+- Time-based promotions might affect pricing
+- Allergen information might need to be tracked
+- Loyalty program integration with points earned/redeemed
+
+This complex structure makes the Builder pattern particularly appropriate, as it lets you create orders step by step, with only the components that are relevant to a particular order type.
