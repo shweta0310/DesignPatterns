@@ -1,0 +1,19 @@
+Design a document rendering system that can:
+
+Handle different document types (PDF, Word, HTML, etc.)
+Render these documents using different rendering engines/platforms (Web Browser, Mobile App, Desktop App)
+Apply different visual themes (Dark Mode, Light Mode, Print-friendly) to the renderings
+
+Allow adding new document types or styling options without changing existing code
+Each document type should have methods for opening, processing, and saving
+Each styling option should have methods for applying formatting
+
+For example:
+A PDF document could be rendered in a web browser with dark mode
+A Word document could be rendered in a mobile app with light mode
+An HTML document could be rendered in a desktop app with print-friendly mode
+
+This problem is ideal for applying the Bridge pattern because:
+It separates the abstraction (document types) from the implementation (styling options)
+It allows both hierarchies to evolve independently
+It avoids an explosion of class combinations (e.g., PDFDarkMode, PDFLightMode, HTMLDarkMode, etc.)

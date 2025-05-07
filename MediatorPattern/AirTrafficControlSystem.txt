@@ -1,0 +1,68 @@
+Problem Statement: Air Traffic Control System
+Design a simplified Air Traffic Control system that coordinates communication between multiple aircraft in a controlled airspace. Instead of aircraft communicating directly with each other about their positions, flight paths, and intentions, they will communicate through a central Air Traffic Control mediator.
+Requirements:
+
+Create an Air Traffic Control mediator that manages all communication between aircraft
+
+Implement these aircraft types with specific behaviors:
+
+Commercial Airliners
+
+Highest landing priority during emergencies
+Need longer runways (runway type A)
+Require 15-minute separation between landings
+Can only communicate with Air Traffic Control (not directly with other aircraft)
+
+
+Private Jets
+
+Medium landing priority
+Can use shorter runways (runway type B)
+Require 5-minute separation between landings
+Limited communication capabilities (can only send location and request landing/takeoff)
+
+
+Cargo Planes
+
+Lowest landing priority (except during emergencies)
+Need the longest runways (special runway type C)
+Require 20-minute separation between landings
+Have weight restrictions for certain runways
+
+
+Each aircraft should be able to:
+
+Register with the Air Traffic Control when entering the airspace
+Deregister when leaving the airspace
+Send location updates
+Request landing permission
+Request takeoff permission
+Receive notifications about nearby aircraft
+Receive instructions from Air Traffic Control
+
+The Air Traffic Control mediator should:
+
+Maintain a registry of all aircraft in the airspace
+Coordinate runway assignments based on aircraft type and runway availability
+Broadcast relevant messages to appropriate aircraft (e.g., notify planes in the same sector)
+Approve or deny landing/takeoff requests based on runway availability and traffic
+Detect potential conflicts or collisions and issue warnings
+Resolve conflicts when multiple aircraft request the same runway
+Provide information about weather conditions or emergency situations
+Manage landing queue based on aircraft priorities and rules
+Route emergency requests to the top of the queue
+
+
+
+Make the system extensible so new types of aircraft or new message types can be added without modifying existing code
+
+This problem exemplifies the Mediator pattern because:
+
+It centralizes complex communications between multiple objects
+Aircraft don't need to know about each other, only about the mediator
+It reduces coupling between the aircraft objects
+Adding new aircraft types or communication protocols only requires changes to the mediator
+Centralizes complex decision-making logic in one place (the Air Traffic Control)
+Allows different types of objects (aircraft) to interact without direct knowledge of each other
+Handles complex rules and priorities without each aircraft needing to know about these rules
+Provides a single point for behavior modification if air traffic rules change

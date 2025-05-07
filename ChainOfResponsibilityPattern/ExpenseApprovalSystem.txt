@@ -1,0 +1,34 @@
+Problem Statement: Corporate Expense Approval System
+Design an expense approval system for a corporation where expense requests need to go through a chain of approvers based on the expense amount and category. Each level of management has different approval limits, and requests must be automatically escalated to the appropriate authority level.
+
+Requirements:
+There are four approval levels:
+Team Lead (can approve up to $1,000)
+Manager (can approve up to $5,000)
+Director (can approve up to $20,000)
+Vice President (can approve any amount)
+
+
+Additionally, expenses should be categorized as:
+Office Supplies
+Equipment
+Travel
+Training
+Entertainment
+
+
+Special approval rules:
+
+Entertainment expenses over $500 must be approved by at least a Manager
+Training expenses over $3,000 must be approved by at least a Director
+All equipment purchases over $15,000 need VP approval regardless of amount
+
+
+If an approver rejects an expense, the process stops and the request is denied
+The system should be flexible enough to add new approval levels or modify approval rules without changing the core logic
+
+This problem is ideal for the Chain of Responsibility pattern because:
+
+Each handler (approver) decides either to process the request or pass it to the next handler
+Clients don't need to know which handler will ultimately process their request
+New handlers can be added to the chain without modifying existing code
